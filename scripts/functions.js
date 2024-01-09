@@ -63,20 +63,21 @@ export function createSelect(genre){
     return `<option id="movieGenre" value="${genre}">${genre}</option>`
 }
 
-// FUNCION PARA FILTRAR POR GÉNERO. LE PASO EL ARRAY (MOVIES). CREO UNA VARIABLE (SELECTED) Y CREO UN ARRAY CON LA OPCIÓN SELECCIONADA. A ELLO LE APLICO EL MÉTODO MAP
-// PARA CREAR EL ARRAY CON EL VALOR DE LA OPCIÓN SELECCIONADA.  
-export function filterMoviesByGenre(array){
-    const selected = Array.from(document.querySelectorAll("#selectGenre option:checked"))
-                            .map(genre => genre.value)
+// FUNCION PARA FILTRAR POR GÉNERO. LE PASO EL ARRAY (MOVIES). CREO UNA VARIABLE (SELECTED) Y CREO UN ARRAY CON LA OPCIÓN SELECCIONADA.  
+export function filterMoviesByGenre(array, optionSelect){
+    const selected = optionSelect.value.split()
     console.log(selected)
     if(selected.length == 0 || selected.includes("all") || selected.includes("selectedGenre")){ 
         return array
     } else {
+        console.log(array.genres)
         const genreSelected = array.filter(movie => selected.some(genre => movie.genres.includes(genre)))
         console.log(genreSelected)
         return genreSelected
     }
 }
+
+
 
 
 

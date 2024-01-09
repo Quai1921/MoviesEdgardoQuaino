@@ -11,6 +11,7 @@ const emptySearch = document.getElementById("showEmptySearch")
 // CAPTURO EL ID DEL ELEMENTO DONDE SE IMPRIMIRÁ EL SELECT
 const selectGenre = document.getElementById("selectGenre")
 
+
 const genresMovies = filterMoviesGenres(movies)
 
 // IMPRIMO CON MÉTODO REDUCE. TOMO LA CONSTANTE CREADA PARA MOSTRAR TODOS LOS GÉNEROS Y LE APLICO REDUCE, QUE VA A TENER UN ACUMULADOR Y LA ITERACIÓN 
@@ -33,7 +34,7 @@ printCards(movies, divContainerMovies)
 // SOLO LAS FILTRADAS POR GÉNERO
 inputSearch.addEventListener("input", e => {
     const filteredMovies = filterMovies(movies, inputSearch.value)
-    const moviesByGenre = filterMoviesByGenre(filteredMovies)
+    const moviesByGenre = filterMoviesByGenre(filteredMovies, selectGenre)
     if(filteredMovies.length == 0 || moviesByGenre.length == 0){
         printShowEmptySearch(emptySearch, inputSearch)
     } else {
@@ -46,7 +47,7 @@ inputSearch.addEventListener("input", e => {
 // EVENTO FILTRAR POR GÉNERO. AGREGO LA FUNCIÓN DE FILTRAR POR NOMBRE.
 selectGenre.addEventListener("change", e => {
     const filteredMovies = filterMovies(movies, inputSearch.value)
-    const genreSelected = filterMoviesByGenre(filteredMovies)
+    const genreSelected = filterMoviesByGenre(filteredMovies, selectGenre)
     printCards(genreSelected, divContainerMovies )
     if (filteredMovies.length > 0 && genreSelected.length == 0) {
         printShowEmptySearch(emptySearch, inputSearch);
@@ -57,6 +58,4 @@ selectGenre.addEventListener("change", e => {
 
 
 divContainerMovies.classList.add("flex", "flex-wrap", "gap-3", "justify-center", "px-12", "w-full", "py-8")
-
-
 
