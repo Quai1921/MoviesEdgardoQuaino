@@ -29,20 +29,20 @@ detailMovie.innerHTML = `
                         <table class="shadow-xl shadow-gray-300 rounded-xl">
                             <tbody class="h-[150px]">
                                 <tr>
-                                    <th class="bg-[#d2ccff] border-b-2 border-r-2 border-white rounded-tl-xl text-l text-left italic pl-2 pr-10 font-extrabold">Original Language</th>
-                                    <td class="bg-[#d2ccff] border-b-2 border-white rounded-tr-xl text-l italic pl-2 pr-10">${movieDetail.original_language}</td>
+                                    <th class="bg-[#d2ccff] border-b-2 border-r-2 border-white rounded-tl-xl text-l text-left italic pl-2 pr-10 font-semibold">Original Language</th>
+                                    <td class="bg-[#d2ccff] border-b-2 border-white rounded-tr-xl text-l italic pl-2 pr-10 font-extrabold">${movieDetail.original_language}</td>
                                 </tr>
                                 <tr>
-                                    <th class="bg-[#F0EEFF] border-b-2 border-r-2 border-white text-l text-left italic pl-2 pr-10 font-extrabold">Release Date</th>
-                                    <td class="bg-[#F0EEFF] border-b-2 border-white text-l italic pl-2 pr-10">${movieDetail.release_date}</td>
+                                    <th class="bg-[#F0EEFF] border-b-2 border-r-2 border-white text-l text-left italic pl-2 pr-10 font-semibold">Release Date</th>
+                                    <td class="bg-[#F0EEFF] border-b-2 border-white text-l italic pl-2 pr-10 font-extrabold">${movieDetail.release_date}</td>
                                 </tr>
                                 <tr>
-                                    <th class="bg-[#d2ccff] border-b-2 border-r-2 border-white text-l text-left italic pl-2 pr-10 font-extrabold">Runtime</th>
-                                    <td class="bg-[#d2ccff] border-b-2 border-white text-l italic text-left pl-2 pr-10">${movieDetail.runtime}</td>
+                                    <th class="bg-[#d2ccff] border-b-2 border-r-2 border-white text-l text-left italic pl-2 pr-10 font-semibold">Runtime</th>
+                                    <td class="bg-[#d2ccff] border-b-2 border-white text-l italic text-left pl-2 pr-10 font-extrabold">${movieDetail.runtime} min</td>
                                 </tr>
                                 <tr>
-                                    <th class="bg-[#F0EEFF] border-r-2 border-white rounded-bl-xl text-l text-left italic pl-2 pr-10 font-extrabold">Status</th>
-                                    <td class="bg-[#F0EEFF] rounded-br-xl text-l italic pl-2 pr-10">${movieDetail.status}</td>
+                                    <th class="bg-[#F0EEFF] border-r-2 border-white rounded-bl-xl text-l text-left italic pl-2 pr-10 font-semibold">Status</th>
+                                    <td class="bg-[#F0EEFF] rounded-br-xl text-l italic pl-2 pr-10 font-extrabold">${movieDetail.status}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -51,19 +51,21 @@ detailMovie.innerHTML = `
                         <table class="shadow-xl shadow-gray-300 rounded-xl">
                             <tbody class="h-[150px]">
                                 <tr>
-                                    <th class="bg-[#d2ccff] border-b-2 border-r-2 border-white rounded-tl-xl text-l text-left italic pl-2 pr-10 font-extrabold">Vote Average</th>
-                                    <td class="bg-[#d2ccff] border-b-2 border-white rounded-tr-xl text-l italic pl-2 pr-10">${movieDetail.vote_average.toFixed(2)}%</td>
+                                    <th class="bg-[#d2ccff] border-b-2 border-r-2 border-white rounded-tl-xl text-l text-left italic pl-2 pr-10 font-semibold">Vote Average</th>
+                                    <td class="bg-[#d2ccff] border-b-2 border-white rounded-tr-xl text-l italic pl-2 pr-10 font-extrabold">${movieDetail.vote_average.toFixed(2)}%</td>
                                 </tr>
                                 <tr>
-                                    <th class="bg-[#F0EEFF] border-b-2 border-r-2 border-white text-l text-left italic pl-2 pr-10 font-extrabold">Budget</th>
-                                    <td class="bg-[#F0EEFF] border-b-2 border-white text-l italic pl-2 pr-10">${movieDetail.budget.toLocaleString('en-US', {style:'currency', currency:'USD'})}</td>
+                                    <th class="bg-[#F0EEFF] border-b-2 border-r-2 border-white text-l text-left italic pl-2 pr-10 font-semibold">Budget</th>
+                                    <td class="bg-[#F0EEFF] border-b-2 border-white text-l italic pl-2 pr-10 font-extrabold">${movieDetail.budget.toLocaleString('en-US', {style:'currency', currency:'USD'})}</td>
                                 </tr>
                                 <tr>
-                                    <th class="bg-[#d2ccff] border-r-2 border-white rounded-bl-xl text-l text-left italic pl-2 pr-10 font-extrabold">Revenue</th>
-                                    <td class="bg-[#d2ccff] rounded-br-xl text-l italic pl-2 pr-10">${movieDetail.revenue.toLocaleString('en-US', {style:'currency', currency:'USD'})}</td>
+                                    <th class="bg-[#d2ccff] border-r-2 border-white rounded-bl-xl text-l text-left italic pl-2 pr-10 font-semibold">Revenue</th>
+                                    <td class="bg-[#d2ccff] rounded-br-xl text-l italic pl-2 pr-10 font-extrabold">${movieDetail.revenue.toLocaleString('en-US', {style:'currency', currency:'USD'})}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 `
+
+
