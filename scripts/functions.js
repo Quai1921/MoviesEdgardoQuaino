@@ -71,7 +71,7 @@ export function filterMoviesByGenre(array, optionSelect){
         return array
     } else {
         console.log(array.genres)
-        const genreSelected = array.filter(movie => selected.some(genre => movie.genres.includes(genre)))
+        const genreSelected = array.filter(movie => movie.genres.includes(optionSelect.value))
         console.log(genreSelected)
         return genreSelected
     }
