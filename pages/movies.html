@@ -9,7 +9,6 @@
     Discover, discuss, and stay updated on the latest films at MovieStack.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="../assets/images/Moviestack_favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/styles/styles.css">
     <title>MovieStack - Movies</title>
 </head>
 
@@ -26,9 +25,18 @@
                 </div>
                 <div class="flex justify-center items-center px-16">
                     <nav class="flex gap-12">
-                        <a class="font-bold hover:border-b-2 hover:border-black" href="../index.html">Home</a>
-                        <a class="font-extrabold text-[#6d38e0] border-b-2 border-[#6d38e0]" href="#">Movies</a>
-                        <a class="font-bold hover:border-b-2 hover:border-black" href="#">Favs</a>
+                        <div class="flex  gap-2 items-center">
+                            <img class="w-6" src="../assets/images/homeNav.png" alt="Home page logo">
+                            <a class="font-bold hover:border-b-2 hover:border-black" href="../index.html">Home</a>
+                        </div>
+                        <div class="flex  gap-2 items-center">
+                            <img class="w-6" src="../assets/images/moviesNav.png" alt="Home page logo">
+                            <a class="font-extrabold text-[#6d38e0] border-b-2 border-[#6d38e0]" href="./pages/movies.html">Movies</a>
+                        </div>
+                        <div class="flex  gap-2 items-center">
+                            <img class="w-6" src="../assets/images/favNav.png" alt="Home page logo">
+                            <a class="font-bold hover:border-b-2 hover:border-black" href="./favorites.html">Favs</a>
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -37,7 +45,7 @@
             <div class= "flex flex-col justify-center w-full max-[768px]:w-screen max-[768px]:sticky max-[768px]:top-0 bg-white shadow-xl shadow-gray-200">
 
                 <div class="flex justify-center w-full max-[768px]:w-screen max-[768px]:sticky max-[768px]:top-0">
-                    <img class="w-full max-h-[600px]" src="../assets/images/moviesBanner25.png" alt="Banner image">
+                    <img class="w-full max-h-[600px]" src="../assets/images/moviesBanner.jpg" alt="Banner image">
                 </div>
 
 
@@ -91,8 +99,10 @@
 
     </div>
 
-    <script src="../scripts/data.js"></script>
+    
     <script type="module" src="../scripts/main.js"></script>
+
+
 </body>
 
 </html>
