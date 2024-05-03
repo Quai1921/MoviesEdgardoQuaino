@@ -5,7 +5,7 @@ import { printCards, filterMovies, printShowEmptySearch, hidenEmptySearch, filte
 
 // LLAMANDO A LA API. ------------------------------------------------------------------------------------------------------------------------------
 
-fetch("https://moviestack.onrender.com/api/movies?limit=5&offset=1", {
+fetch("https://moviestack.onrender.com/api/movies", {
     method: "GET",
     headers: {
         "x-api-key": "0ff70d54-dc0b-4262-9c3d-776cb0f34dbd"
@@ -63,27 +63,32 @@ fetch("https://moviestack.onrender.com/api/movies?limit=5&offset=1", {
             const isFavorite = e.target.dataset.id
             console.log(isFavorite)
             if(isFavorite){
+
                 const favoriteRemove = moviesFavorites.findIndex(item => item == isFavorite)
 
                 if(favoriteRemove != -1){
-                    e.target.classList.remove("bg-[url('../assets/images/favred.png')]")
-                    e.target.classList.add("bg-[url('../assets/images/favblack.png')]")
+                    const favorite = e.target.classList
+                    console.log(favorite)
+                    favorite.remove("bg-[url('../assets/images/favred.png')]")
+                    favorite.add("bg-[url('../assets/images/favblack.png')]")
                     moviesFavorites.splice(favoriteRemove, 1)
                     localStorage.setItem("moviesFavorites", JSON.stringify(moviesFavorites))
 
                 } else {
-                    e.target.classList.remove("bg-[url('../assets/images/favblack.png')]")
-                    e.target.classList.add("bg-[url('../assets/images/favred.png')]")
+                    const favorite = e.target.classList
+                    favorite.remove("bg-[url('../assets/images/favblack.png')]")
+                    favorite.add("bg-[url('../assets/images/favred.png')]")
                     moviesFavorites.push(isFavorite)
                     localStorage.setItem("moviesFavorites", JSON.stringify(moviesFavorites))
                 }
-            console.log(moviesFavorites)
+                    console.log(moviesFavorites)
             }
-                // Capturar el id del dataset.id [ X ]
-                // Si ese id está en el array de favoritos, lo saco [ X ]
-                // Si no está en el array de favoritos lo agrego [ X ]
-                // En amboos casos siempre actualizo el localStorage [ X ]
-                // Imprimo las cards [ X ]
+            
+            // Capturar el id del dataset.id [ X ]
+            // Si ese id está en el array de favoritos, lo saco [ X ]
+            // Si no está en el array de favoritos lo agrego [ X ]
+            // En amboos casos siempre actualizo el localStorage [ X ]
+            // Imprimo las cards [ X ]
         })
     })
     .catch(error => console.log(error))

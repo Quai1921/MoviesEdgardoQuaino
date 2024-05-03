@@ -4,10 +4,11 @@ export function createMovieCards(image, title, tagline, overview, id){
     let moviesFavorites = JSON.parse(localStorage.getItem("moviesFavorites")) || []
 
     const isFavorite = moviesFavorites.includes(id)
+    console.log(isFavorite);
     const favBackground = isFavorite ? "bg-[url('../assets/images/favred.png')]" : "bg-[url('../assets/images/favblack.png')]"
 
     // Recupro el localStorage y me fijo si el id de cada una de las películas está incluido. Si está en el localStorage, le pongo fondo rojo, si no está, fondo negro.
-    
+
     return `<article id="cardsMovies" class="articleCards flex flex-col gap-1 items-center w-[330px] min-h-[460px] rounded-2xl pt-3 px-4 pb-3 shadow-2xl bg-white border-2 border-[#d2ccff]">
                 <img class= "imageCards h-[200px] object-cover rounded-t-2xl pb-2" src="https://moviestack.onrender.com/static/${image}" alt="Cover image, movie ${title}">
                 <h3 class="titleCards text-center font-bold text-xl w-full px-1">${title}</h3>

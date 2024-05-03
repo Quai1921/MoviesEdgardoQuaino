@@ -17,46 +17,49 @@
         <header>
             <div class="w-full h-6 bg-black">
             </div>
-            <div class="flex flex-wrap justify-center bg-gray-300 pb-3 min-[800px]:justify-between min-[800px]:pb-0">
+            <div id="navBarMenu" class="flex flex-wrap justify-center bg-gray-300 pb-3 min-[800px]:pb-0 max-md:justify-between">
                 <div class="flex justify-center items-center p-3 px-14 gap-8">
                     <img class="object-cover w-16" src="../assets/images/Moviestack_isotipo.png"
                         alt="Logo MovieStack image">
-                    <img class="w-56" src="../assets/images/Moviestack_logotipo4.png" alt="Logo MovieStack text">
+                    <img class="w-56 max-md:hidden" src="../assets/images/Moviestack_logotipo4.png" alt="Logo MovieStack text">
                 </div>
-                <div class="flex justify-center items-center px-16">
-                    <nav class="flex gap-12">
+                <button id="btnOpen" class="pr-10 md:hidden"><img class="w-10" src="../assets/images/menuOpen.png" alt="Image open menu"></button>
+                <div id="navBar" class="flex justify-center items-center px-16 max-md:flex-col max-md:justify-start max-md:gap-12 max-md:absolute max-md:right-0 max-md:bg-[#d2ccff] max-md:top-0 max-md:bottom-0 max-md:pt-14 max-md:pr-8 max-md:pl-52 max-md:opacity-0 max-md:hidden">
+                    <nav class="flex gap-12 max-md:flex-col max-md:items-end">
+                        <button id="btnClose" class="md:hidden"><img class="w-6" src="../assets/images/menuClose.png" alt="Image close menu"></button>
                         <div class="flex  gap-2 items-center">
-                            <img class="w-6" src="../assets/images/homeNav.png" alt="Home page logo">
+                            <img class="w-6 max-md: order-1" src="../assets/images/homeNav.png" alt="Home page logo">
                             <a class="font-bold hover:border-b-2 hover:border-black" href="../index.html">Home</a>
                         </div>
                         <div class="flex  gap-2 items-center">
-                            <img class="w-6" src="../assets/images/moviesNav.png" alt="Home page logo">
-                            <a class="font-extrabold text-[#6d38e0] border-b-2 border-[#6d38e0]" href="./pages/movies.html">Movies</a>
+                            <img class="w-6 max-md: order-1" src="../assets/images/moviesNav.png" alt="Home page logo">
+                            <a class="font-extrabold text-[#6d38e0] border-b-2 border-[#6d38e0]"
+                                href="#">Movies</a>
                         </div>
-                        <div class="flex  gap-2 items-center">
-                            <img class="w-6" src="../assets/images/favNav.png" alt="Home page logo">
-                            <a class="font-bold hover:border-b-2 hover:border-black" href="./favorites.html">Favs</a>
+                        <div class="flex gap-2 items-center">
+                            <img class="w-6 max-md: order-1" src="../assets/images/favNav.png" alt="Home page logo">
+                            <a class="font-bold hover:border-b-2 hover:border-black" href="../pages/favorites.html">Favs</a>
                         </div>
                     </nav>
                 </div>
             </div>
         </header>
         <main class="grow flex flex-col items-center">
-            <div class= "flex flex-col justify-center w-full max-[768px]:w-screen max-[768px]:sticky max-[768px]:top-0 bg-white shadow-xl shadow-gray-200">
+            <div class= "flex flex-col justify-center w-full bg-white shadow-xl shadow-gray-200">
+                <!-- max-md:w-screen max-md:sticky max-md:top-0 -->
 
-                <div class="flex justify-center w-full max-[768px]:w-screen max-[768px]:sticky max-[768px]:top-0">
-                    <img class="w-full max-h-[600px]" src="../assets/images/moviesBanner.jpg" alt="Banner image">
+                <div class="flex justify-center w-full">
+                    <!-- max-md:w-screen max-md:sticky max-md:top-0 -->
+                    <img class="w-full max-h-[600px]" src="../assets/images/moviesBanner1.jpg" alt="Banner image">
                 </div>
 
 
                 <div class="flex flex-col justify-center items-center">
-
                     <div id="inputSelect" class="flex flex-wrap justify-center items-center gap-2 md:gap-20 py-5 px-3">
                         <select id="selectGenre" name="selectGenre"
                             class="font-semibold cursor-pointer border-2 border-[#d2ccff] w-[300px] rounded-xl h-10">
                             <option value="selectedGenre" disabled selected>Select genre please...</option>
                             <option value="all">All movies</option>
-
                         </select>
 
                         <div class="flex flex col justify-center p-5">
@@ -99,7 +102,7 @@
 
     </div>
 
-    
+    <script src="../scripts/animationNavBar.js"></script>
     <script type="module" src="../scripts/main.js"></script>
 
 

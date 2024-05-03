@@ -14,6 +14,10 @@ fetch("https://moviestack.onrender.com/api/movies", {
     .then(response => response.json())
     .then (data => {
         const moviesCompleteList = data.movies
+        console.log(moviesCompleteList);
+
+        // const listFavoriteMovies = moviesCompleteList.filter(movies => moviesFavorites.includes(movies.id))
+        // console.log(listFavoriteMovies);
         
 
         const listFavMovies = document.getElementById("listFavMovies")
@@ -22,7 +26,8 @@ fetch("https://moviestack.onrender.com/api/movies", {
         localStorage.setItem("moviesFavorites", JSON.stringify(moviesFavorites))
         
         const quantityMovies = document.getElementById("quantityMovies")
-        const numberMoviesFavorites = moviesFavorites.length > 0 ?quantityMovies.textContent = `You have added ${moviesFavorites.length} movies to favorites.` :quantityMovies.textContent = `You don't have any movies added to favorites yet.` 
+        
+        moviesFavorites.length > 0 ?quantityMovies.textContent = `You have added ${moviesFavorites.length} movies to favorites.` :quantityMovies.textContent = `You don't have any movies added to favorites yet.` 
         // if(moviesFavorites.length != 0){
         //     quantityMovies.textContent =  `You have added ${moviesFavorites.length} movies to favorites.`
         // } 
@@ -52,13 +57,14 @@ fetch("https://moviestack.onrender.com/api/movies", {
                                 toast: true,
                                 icon: "success"
                             });
-                            e.target.classList.remove("bg-[url('../assets/images/favred.png')]")
-                            e.target.classList.add("bg-[url('../assets/images/favblack.png')]")
+                            const favorite = e.target.classList
+                            favorite.remove("bg-[url('../assets/images/favred.png')]")
+                            favorite.add("bg-[url('../assets/images/favblack.png')]")
                             moviesFavorites.splice(favoriteRemove, 1)
 
                             localStorage.setItem("moviesFavorites", JSON.stringify(moviesFavorites))
                     
-                            const numberMoviesFavorites = moviesFavorites.length > 0 ?quantityMovies.textContent = `You have added ${moviesFavorites.length} movies to favorites.` :quantityMovies.textContent = `You don't have any movies added to favorites yet.`
+                            moviesFavorites.length > 0 ?quantityMovies.textContent = `You have added ${moviesFavorites.length} movies to favorites.` :quantityMovies.textContent = `You don't have any movies added to favorites yet.`
                     
                             printFavoriteCards(moviesCompleteList, listFavMovies)
                         }
@@ -69,3 +75,9 @@ fetch("https://moviestack.onrender.com/api/movies", {
         })
     })
     .catch(error => console.log(error))
+
+
+
+
+
+

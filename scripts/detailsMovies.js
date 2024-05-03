@@ -98,7 +98,7 @@ const callMovieDetails = fetch("https://moviestack.onrender.com/api/movies", {
 
 
 // PRÁCTICA EXPLAIN CODE
-// const numeros = [19, 24, 8, 3,13, 7, 26, 34]
+// const numeros = [19, 24, 8, 3, 13, 7, 26, 34]
 // console.log(numeros)
 
 // function pares(array){
@@ -109,27 +109,37 @@ const callMovieDetails = fetch("https://moviestack.onrender.com/api/movies", {
 
 // console.log(numerosPares)
 
-// function numPorCinco (array){
-//     return array.map(item => item *5)
+
+
+// function numPorCinco(array){
+//     return array.map(num => num * 5)
 // }
 
-// const numMultiplicados = numPorCinco (numerosPares)
+// const numMultiplicados = numPorCinco(numerosPares)
 // console.log(numMultiplicados)
 
-// console.log(numPorCinco (numerosPares))
+// console.log(numPorCinco(numerosPares))
+
+
+
+
 
 // const masChico = Math.min(...numMultiplicados)
 // console.log(masChico);
 
 // const masGrande = Math.max(...numMultiplicados)
-// console.log(masGrande);
+// console.log(masGrande)
+
+
 
 // function ordenar(numMultiplicados){
 //     return numMultiplicados.toSorted((a,b) => b-a)
 // }
 
-// let muerasa= ordenar(numMultiplicados)
+// let ordenadosMayorAMenor= ordenar(numMultiplicados)
+// console.log(ordenadosMayorAMenor);
 
-// console.log(muerasa[0]);
-// console.log(muerasa[muerasa.length -1]);
+
+// console.log(ordenadosMayorAMenor[0]);
+// console.log(ordenadosMayorAMenor[ordenadosMayorAMenor.length - 1]);
 
